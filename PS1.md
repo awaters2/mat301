@@ -122,13 +122,16 @@ FROM database.table;
 It stands for structure query language and is pronounced "es que el" or "sequel."
 
 2. Are SQL commands case-sensitive?  How can you determine? 
-No they are not. 
+No they are not. This can be determined by typing command and placing capitals anywhere within a command. The program will not execute the command otherwise.
 
 3. What does DQL stand for?
+DQL stands for data query language and is a sub-language of SQL.
 
 4. True or False:  Is it necessary to use the `FROM` clause with the select statement? 
+True, it is important to specify the location at which you are drawing information from.
 
 5. True or False:  Is it necessary to use a `WHERE` clause?  If not, when and why would you use a `WHERE` clause?
+False, it is only needed when one needs to filter their query.
 
 6. What is the purpose of the `ORDER BY` clause?  What is its default value?
 'ORDER BY' is the function that orders a set of given data by ascending order unless put desc at the end of the statement
@@ -162,7 +165,16 @@ select count(*) from unemath_Waters.Products where country='USA';
 select count(*) from unemath_Waters.Products where price<10;
 
 16. How many products cost the company less than $10 and sell for more than $20?
+select Count(*) from unemath_Waters.Products where price<10 and msrp>20;
+
 17. How many products cost the company less than $10 and sell for less than $20?
+select Count(*) from unemath_Waters.Products where price<10 and msrp<20;
+
 18. Which products cost less than $10 and sell for more than $20?
+select * from unemath_Waters.Products where price<10 and msrp>20;
+
 19. Count all product's that have shipping weight less than 1 pound or greater than 20 pounds.
+select * from unemath_Waters.Products where weight<1 or weight>20;
+
 20. Create your own query.
+select * from unemath_Waters.Products where msrp<20 and weight<5;
