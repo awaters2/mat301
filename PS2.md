@@ -185,9 +185,19 @@ select round(ship_depth*ship_width*ship_length,2) as volume from unemath_Waters.
 select round(1.075*1.35*price,2) as sales_price from unemath_Waters.Products;
 
 10. True or False: Both conditions when using the OR operator must be true.
-11. What is the logical negation of the IN operator?
-12. What is wrong with the folling statement: `SELECT * FROM Products WHERE price BETWEEN 10, 100;
-13. Select products with length less than 12 inches and sort decsending.
-14. How many products are there whose price is between $10 and $20?
-15. How many products are there made in China whose MSRP is between $10 and $20.
+False, only one of the conditions has to be true.
 
+11. What is the logical negation of the IN operator?
+The NOT IN operator will give a logical negation.
+
+12. What is wrong with the following statement: `SELECT * FROM Products WHERE price BETWEEN 10, 100;
+The statement does not have an 'and' between the 10 and 100. It should be: SELECT * FROM unemath_Waters.Products WHERE price BETWEEN 10 and 100;
+
+13. Select products with length less than 12 inches and sort decsending.
+SELECT * FROM unemath_Waters.Products WHERE price<12 order by price desc;
+
+14. How many products are there whose price is between $10 and $20?
+SELECT count(*) FROM unemath_Waters.Products WHERE price between 10 and 20;
+
+15. How many products are there made in China whose MSRP is between $10 and $20.
+SELECT count(*) FROM unemath_Waters.Products WHERE msrp between 10 and 20;
