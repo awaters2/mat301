@@ -29,7 +29,9 @@ NF1: cus_first, cus_last, add_street, add_city, add_state, add_zip, cus_phone, c
 NF2: The primary keys are the first elements that appear in each table.
 
 Customer Info
+------------
 | cus_id |
+|--------|
 | cus_first |
 | cus_last |
 | add_street |
@@ -40,7 +42,9 @@ Customer Info
 | cus_email |
 
 Item
+------
 | item_id |
+|--------|
 | item_name |
 | item_quantity |
 | item_price |
@@ -48,23 +52,36 @@ Item
 NF3: The primary keys are the first elements to appear in each table with the exception of the table Customer which represents the foreign keys that connect to one of the three other relations.
 
 Cutomer
+-------------
 | cus_id |
+|--------|
 | item_id |
 | add_zip |
 
 Customer Info
+------------
 | cus_id |
+|--------|
 | cus_first |
 | cus_last |
 | cus_phone |
 | cus_email |
 
+Item
+-----
+| item_id |
+|--------|
+| item_name |
+| item_quantity |
+| item_price |
+
 Address
+----------
 | add_zip |
+|---------|
 | add_street |
 | add_city |
 | add_state |
-------------
 
 8. For customer, could email be used as a primary key?  If so, state why.  Also, if possible to use as a primary key, discuss any disadvantages of using email as a primary key.
 The email would be a bad primary key (but it could be used as a primary key) because people don't always keep the same email which would mean that attribute could be useless as a unique identifier.
